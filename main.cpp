@@ -1,8 +1,3 @@
-/*
-Copyright (c) 2004, Lode Vandevenne
-All rights reserved.
-*/
-
 #include <cmath>
 #include <string>
 #include <vector>
@@ -12,16 +7,20 @@ All rights reserved.
 using namespace QuickCG;
 using namespace std;
 
-//place the example code below here:
+int main(){
+  std::vector<ColorRGB> image;
+  unsigned long w, h;
+  if(loadImage(&image, &w, &h, "barrel.png")) return 1;
+  screen(w, h, 0, "An image");
 
-int main(int argc, char *argv[]) 
-{
-  screen(256,256, 0, "A Face!"); 
-  drawDisk(128, 128, 100, ColorRGB(255, 128, 200)); 
-  drawDisk(88, 100, 10, ColorRGB(0, 0, 255)); 
-  drawDisk(168, 100, 10, ColorRGB(0, 0, 255)); 
-  drawLine(88, 150, 168, 150, ColorRGB(255, 0, 0)); 
-  redraw(); 
-  sleep(); 
+  //draw each pixel of the image
+  for(int y = 0; y < h; y++)
+  for(int x = 0; x < w; x++)
+  {
+    pset(x, y, image[y * w + x]);
+  }
+
+  redraw();
+  sleep();
 }
-    
+
