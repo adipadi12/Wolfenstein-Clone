@@ -7,16 +7,28 @@
 using namespace QuickCG;
 using namespace std;
 
-
-int main(int
-argc, char *argv[])
+int main(int argc, char *argv[])
 {
-  screen(256, 256, 0, "Input Text");
-  //input a string
-  std::string someText;
-  getInputString(someText, "Enter some text:", false, 0, 0);
-  //input an integer
-  int someInteger = getInput<int>("Enter an integer:", false, 0, 8);
-  //input a double
-  double someDouble = getInput<double>("Enter a number:", false, 0, 16);
+  unsigned long w = 0, h = 0;
+  std::vector<ColorRGB> image;
+  loadImage(image, w, h, "pics/flower.png");
+  screen(w, h, 0, "RGB Color");
+
+  ColorRGB color; //the color for the pixels
+
+  for(int y = 0; y < h; y++)
+  for(int x = 0; x < w; x++)
+  {
+    //here the negative color is calculated!
+    color.r = image[y * w + x].r;
+    //red component set to zero
+    color.g = image[y * w + x].g;
+    color.b = 0;
+
+    pset(x, y, color);
+  }
+
+  redraw();
+  sleep();
+  return 0;
 }
