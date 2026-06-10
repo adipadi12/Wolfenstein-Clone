@@ -7,20 +7,16 @@
 using namespace QuickCG;
 using namespace std;
 
-int main(){
-  std::vector<ColorRGB> image;
-  unsigned long w, h;
-  if(loadImage(&image, &w, &h, "barrel.png")) return 1;
-  screen(w, h, 0, "An image");
 
-  //draw each pixel of the image
-  for(int y = 0; y < h; y++)
-  for(int x = 0; x < w; x++)
-  {
-    pset(x, y, image[y * w + x]);
-  }
-
-  redraw();
-  sleep();
+int main(int
+argc, char *argv[])
+{
+  screen(256, 256, 0, "Input Text");
+  //input a string
+  std::string someText;
+  getInputString(someText, "Enter some text:", false, 0, 0);
+  //input an integer
+  int someInteger = getInput<int>("Enter an integer:", false, 0, 8);
+  //input a double
+  double someDouble = getInput<double>("Enter a number:", false, 0, 16);
 }
-
