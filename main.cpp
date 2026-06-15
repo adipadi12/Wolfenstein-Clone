@@ -106,7 +106,7 @@ int main(int /*argc*/, char */*argv*/[])
   std::vector<Uint32> texture[11];
   for(int i = 0; i < 11; i++) texture[i].resize(texWidth * texHeight);
 
-  screen(screenWidth,screenHeight, 0, "Raycaster");
+  screen(screenWidth,screenHeight, 0, "Wolfenstein Clone by AdiPadi");
 
   //load some textures
   unsigned long tw, th, error = 0;
