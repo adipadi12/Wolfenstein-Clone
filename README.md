@@ -1,4 +1,8 @@
 # Wolfenstein-Clone
+<img width="568" height="320" alt="2026-06-1509-18-33-ezgif com-optimize" src="https://github.com/user-attachments/assets/765c87a3-75bb-4c70-b898-0284e0935211" />
+
+
+
 <img width="645" height="599" alt="image" src="https://github.com/user-attachments/assets/c3e7b0d3-24c3-47d0-9d16-f5a8448327b5" />
 
 
